@@ -33,6 +33,7 @@ st.html(style)
 
 
 def prompts(unit):
+    st.link_button("이 차시 예제 코드를 고쳐서 실행하기",f"https://greatsong.github.io/dugeun-lunch-lab/workshop/?unit={unit}")
     with st.expander("수업에서 쓰는 프롬프트"):
         for row in PROMPTS:
             if row["unit"] == unit:

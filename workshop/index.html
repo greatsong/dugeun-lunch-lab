@@ -1,0 +1,8 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>코드 작업대 · 두근두근 급식실</title><link rel="stylesheet" href="../site.css"><link rel="stylesheet" href="workshop.css"></head><body>
+<header><div class="bar"><a class="brand" href="../"><img src="../assets/dugeun.webp" alt="">두근두근 급식실</a><nav><a href="../#lessons">차시별 실습</a><a href="../prompts.html">프롬프트</a></nav></div></header>
+<main><div class="workhead"><h1>코드 작업대</h1><label>실습 선택 <select id="unit"></select></label></div>
+<section id="brief"><h2 id="title"></h2><p id="situation"></p><div class="activity"><div><h3>AI에게 부탁할 일</h3><p id="prompt"></p><button id="copy">프롬프트 복사</button></div><div><h3>실행 전, 결과 예상하기</h3><p id="predict"></p><h3>한 가지 고친다면?</h3><p id="change"></p></div></div></section>
+<div class="grid"><section><div class="editorhead"><h2><label for="editor">app.py</label></h2><button id="save">코드 받기 ↓</button></div>
+<p id="companions" hidden>내 저장소에 올릴 때는 <a href="급식조회_함께쓰는파일.zip" download>급식 조회용 파일 세 개</a>도 같은 폴더에 두세요.</p><textarea id="editor" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea><div class="actions"><button id="run" class="primary">▶ 실행</button><button id="reset">예제 다시 열기</button></div><p id="notice" role="status"></p></section>
+<section><h2>실행 결과</h2><div id="output"><p>왼쪽 코드를 읽고 <b>실행</b>을 누르세요.</p></div><details><summary>예제에서 확인할 결과</summary><p id="check"></p></details></section></div></main>
+<script type="module" src="studio.js"></script></body></html>
