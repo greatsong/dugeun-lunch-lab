@@ -10,6 +10,7 @@ import streamlit as st
 
 import classroom as db
 from desk import classroom_page
+from journey import journey_activity
 from screens import cup, hearts, meal_screen, receipts, results
 
 ROOT = Path(__file__).resolve().parent
@@ -112,10 +113,7 @@ def starter_zip():
 
 
 def question_page():
-    st.title("누구에게 무엇을 물어볼까?")
-    st.write("최근 먹은 점심을 한 끼 떠올려 보세요. 메뉴를 고를 때, 반찬을 담을 때, 식판을 비울 때 어떤 일이 있었나요?")
-    team_form("problem","우리 팀의 질문",["기억나는 장면","이 앱을 쓸 사람","우리 팀의 가설","그 사람에게 물어볼 질문"])
-    st.caption("팀 기록은 지금 열어 둔 브라우저 세션에 보관합니다. 새로고침하기 전에 8차시에서 파일로 받아 두세요.")
+    journey_activity()
     prompts(3)
 
 
