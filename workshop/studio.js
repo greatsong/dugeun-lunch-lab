@@ -28,6 +28,7 @@ async function load(id){
     }
   }
   if(seq!==requestCount)return;
+  el("first-publish").hidden = entry.id !== "1";
   support=companions; el("companions").hidden=entry.id!=="2"; original=source;el("editor").value=drafts.get(entry.id)??source;el("run").disabled=false;
 }
 const errors=err=>{el("notice").textContent=String(err.message||err)};

@@ -13,9 +13,99 @@
 <a class="unit" href="lab/?lesson=7"><small>7차시</small><h3>기능 점검</h3><p>같은 입력으로 고치기 전과 후 비교하기</p><span aria-hidden="true">↗</span></a>
 <a class="unit" href="lab/?lesson=8"><small>8차시</small><h3>팀별 시연</h3><p>만든 앱을 보여 주고 팀 기록 내려받기</p><span aria-hidden="true">↗</span></a>
 </div><a class="results" href="visuals/">그림으로 보는 8차시 <b>→</b></a> <span aria-hidden="true">　</span><a class="results" href="workshop/">예제 코드를 고쳐서 실행하기 <b>→</b></a> <span aria-hidden="true">　</span><a class="results" href="lab/?lesson=9">하트와 월드컵 결과 보기 <b>→</b></a></section>
-<section id="signup"><div class="section-title"><h2>내 앱 주소 만들기</h2><img src="assets/ttukttak.webp" alt=""></div><p>수업 예제는 가입 없이 열립니다. 내 앱을 친구에게 보내려면 아래 순서로 한 번만 준비하세요.</p><div class="deck"><strong>1차시 학생 자료</strong> <a href="lesson01/%EB%91%90%EA%B7%BC%EB%91%90%EA%B7%BC%20%EA%B8%89%EC%8B%9D%EC%8B%A4_%ED%95%99%EC%83%9D%EC%9A%A9%201%EC%B0%A8%EC%8B%9C_ChatGPT_2026-11-21_1124_KST.pptx">파워포인트 받기 ↓</a> <a href="lesson01/%EB%91%90%EA%B7%BC%EB%91%90%EA%B7%BC%20%EA%B8%89%EC%8B%9D%EC%8B%A4_%ED%95%99%EC%83%9D%EC%9A%A9%201%EC%B0%A8%EC%8B%9C_ChatGPT_2026-11-21_1124_KST.pdf">PDF로 보기 ↗</a></div><ol class="steps">
-<li><h3>GitHub에 가입하기</h3><p>받은편지함을 열 수 있는 이메일로 가입하고 인증을 마치세요. 사용자 이름은 앱 주소에 보일 수 있으니 별명을 써도 좋습니다.</p><a href="https://github.com/signup">GitHub 가입 ↗</a></li>
-<li><h3>두 파일 올리기</h3><p>새 저장소 이름을 <code>lunch-app</code>으로 쓰고 <b>Public</b>을 고르세요. 아래 압축을 풀고 <code>app.py</code>와 <code>requirements.txt</code>를 올린 뒤 <b>Commit changes</b>를 누르세요.</p><a href="starter/급식앱_첫파일.zip" download>실습 파일 받기 ↓</a> · <a href="https://github.com/new">새 저장소 ↗</a></li>
-<li><h3>Streamlit에 연결하기</h3><p>Community Cloud에서 GitHub 계정으로 로그인하세요. 처음이라면 계정을 만든 뒤 Workspaces에서 <b>Connect GitHub account</b>를 고르고 <b>Authorize streamlit</b>을 누르세요.</p><a href="https://share.streamlit.io/">Streamlit 열기 ↗</a></li>
-<li><h3>짝에게 주소 보내기</h3><p><b>Create app</b>에서 내 저장소와 <code>main</code> 브랜치를 고르세요. 실행 파일에 <code>app.py</code>를 적고 <b>Deploy</b>를 누르세요. 짝의 기기에서 내 앱 제목이 보이나요?</p><a href="lab/?lesson=1">세 줄 코드 고치기 ↗</a></li>
-</ol></section></main><footer><div><strong>두근두근 급식실</strong><a href="https://greatsong.github.io/ds-danggok-2026/lesson01.html">당곡 DS 1차시 ↗</a></div></footer></body></html>
+<section id="signup"><div class="section-title"><h2>내 앱 주소 만들기</h2><img src="assets/ttukttak.webp" alt=""></div><p>오늘은 내가 고친 앱 주소를 짝에게 보냅니다. 먼저 가입 없이 예제를 열고 한 줄을 바꿔 보세요. 가입할 때 쓸 메일함도 열어 두세요.</p>
+<div class="deck"><strong>1차시 학생 자료</strong> <a href="lesson01/%EB%91%90%EA%B7%BC%EB%91%90%EA%B7%BC%20%EA%B8%89%EC%8B%9D%EC%8B%A4_%ED%95%99%EC%83%9D%EC%9A%A9%201%EC%B0%A8%EC%8B%9C_ChatGPT_2026-11-21_1124_KST.pptx">파워포인트 받기 ↓</a> <a href="lesson01/%EB%91%90%EA%B7%BC%EB%91%90%EA%B7%BC%20%EA%B8%89%EC%8B%9D%EC%8B%A4_%ED%95%99%EC%83%9D%EC%9A%A9%201%EC%B0%A8%EC%8B%9C_ChatGPT_2026-11-21_1124_KST.pdf">PDF로 보기 ↗</a></div>
+<nav class="setup-jump" aria-label="1차시 진행 순서">
+  <a href="#first-try">예제 실행</a><a href="#github-account">GitHub 가입</a><a href="#streamlit-account">Streamlit 가입</a><a href="#github-connect">저장소 연결</a><a href="#first-files">파일 올리기</a><a href="#first-deploy">앱 공개</a>
+</nav>
+<div class="setup-list">
+<details id="first-try" open>
+  <summary>1. 예제에서 한 문장을 바꿔 보세요</summary>
+  <div class="setup-body">
+    <p><a href="workshop/?unit=1" target="_blank" rel="noopener">1차시 코드 작업대 열기 ↗</a>를 누르세요. 가입 없이 새 탭에서 열립니다.</p>
+    <ol><li>세 줄짜리 코드 아래의 <strong>▶ 실행</strong>을 누르세요. <b>두근두근 급식실</b>이라는 제목과 <b>오늘 우리 학교 점심</b>이라는 문장이 보이나요?</li><li>셋째 줄의 따옴표 안만 <b>오늘 다시 먹고 싶은 반찬은?</b>으로 바꾸고 다시 실행하세요. 따옴표와 괄호는 그대로 둡니다.</li></ol>
+    <p class="setup-check"><b>확인</b> 큰 제목은 그대로이고 그 아래 문장만 바뀌었습니다. 나중에 이 코드를 받을 수 있게 작업대 탭을 열어 두세요.</p>
+  </div>
+</details>
+<details id="github-account">
+  <summary>2. GitHub 계정을 만들고 이메일을 인증하세요</summary>
+  <div class="setup-body">
+    <p>GitHub는 내 코드를 보관할 곳입니다. 이미 계정이 있으면 <a href="https://github.com/login" target="_blank" rel="noopener">GitHub 로그인 ↗</a> 후 바로 3번으로 가세요.</p>
+    <ol><li><a href="https://github.com/signup" target="_blank" rel="noopener">GitHub 가입 페이지 ↗</a>를 엽니다. 이메일로 가입한다면 받은편지함을 열 수 있는 이메일, 비밀번호, <b>Username</b>(사용자 이름)을 입력하세요. 이미 쓰는 이름이라는 안내가 뜨면 이름 뒤에 숫자를 붙여 보세요.</li><li>사람인지 확인하는 문제가 뜨면 화면 안내에 따라 완료하세요. GitHub에서 보낸 메일을 열어 인증 링크를 누르거나, 인증 코드가 왔다면 GitHub 가입 창에 입력하세요.</li></ol>
+    <p class="setup-check"><b>확인</b> GitHub에 로그인한 뒤 오른쪽 위 프로필 메뉴에서 내 사용자 이름을 확인합니다. 이 이름은 잠시 뒤 앱을 공개할 때 다시 씁니다.</p>
+    <p class="setup-help">메일이 안 오면 입력한 주소와 스팸함을 확인하세요. 인증을 기다리는 동안 짝과 코드 작업대를 함께 써도 됩니다.</p>
+  </div>
+</details>
+<details id="streamlit-account">
+  <summary>3. Streamlit Community Cloud에도 가입하세요</summary>
+  <div class="setup-body">
+    <p>내 코드를 실행해 친구가 열 수 있는 주소를 만드는 곳입니다. 방금 만든 GitHub 계정으로 본인을 확인하면 Streamlit용 비밀번호를 한 번 더 정할 필요가 없습니다.</p>
+    <ol><li><a href="https://share.streamlit.io/" target="_blank" rel="noopener">Streamlit Community Cloud 열기 ↗</a>. <strong>Continue to sign-in</strong>을 누르세요. 처음이라면 로그인 화면의 <b>Don’t have an account?</b> 옆 <strong>Sign up</strong>을 누르세요. 이미 가입했다면 로그인 화면에서 계속합니다.</li><li><strong>Continue with GitHub</strong>를 누르세요. GitHub 로그인 창이 뜨면 2번에서 쓴 계정으로 로그인합니다. Streamlit Community Cloud가 이메일을 확인하도록 허용할지 물으면 계정과 앱 이름을 확인하고 승인하세요.</li><li>첫 가입 정보 화면이 나오면 <b>Primary email</b>을 확인하고 필수 항목을 채우세요. 맨 아래 <strong>Continue</strong>를 누르세요. 이미 가입한 학생은 이 화면을 건너뛰고 작업 공간으로 들어갑니다.</li></ol>
+    <div class="setup-screens">
+      <figure><img src="assets/onboarding/streamlit-sign-in.png" alt="처음 보이는 로그인 화면. 맨 아래에 Sign up이 있습니다." width="785" height="832" loading="lazy"><figcaption>처음 가입할 때는 맨 아래 <b>Sign up</b></figcaption></figure>
+      <figure><img src="assets/onboarding/streamlit-sign-up.png" alt="Sign up 화면의 가입 방법 중 Continue with GitHub 버튼" width="745" height="404" loading="lazy"><figcaption>가입 화면에서 <b>Continue with GitHub</b></figcaption></figure>
+    </div>
+    <p class="setup-check"><b>가입 완료</b> 작업 공간이 열리면 Streamlit 계정이 생긴 겁니다. 왼쪽 위 <b>Workspaces</b>에 경고 표시가 있으면 4번에서 내 GitHub 저장소를 연결하세요.</p>
+  </div>
+</details>
+<details id="github-connect">
+  <summary>4. Streamlit에서 내 GitHub 파일을 읽게 해 주세요</summary>
+  <div class="setup-body">
+    <p>앞 단계에서는 내 이메일로 로그인했습니다. 이제 내가 공개한 코드를 Streamlit이 읽을 수 있도록 연결합니다.</p>
+    <ol><li>Streamlit 왼쪽 위 <strong>Workspaces</strong>를 누르고 <strong>Connect GitHub account</strong>를 고르세요.</li><li>GitHub로 이동하면 내 계정인지 확인하고 <strong>Authorize streamlit</strong>을 누르세요. 다시 로그인하라는 창이 뜨면 같은 GitHub 계정을 쓰세요.</li></ol>
+    <p class="setup-check"><b>연결 완료</b> Streamlit으로 돌아왔을 때 왼쪽 위에 내 GitHub 사용자 이름이 보입니다. 처음부터 내 이름이 보였으면 5번으로 가세요.</p>
+  </div>
+</details>
+<details id="first-files">
+  <summary>5. 내 코드를 파일로 받으세요</summary>
+  <div class="setup-body">
+    <ol><li>처음에 열어 둔 <b>코드 작업대</b> 탭으로 돌아갑니다. 내 문구가 맞는지 확인하고 편집창 위의 <strong>코드 받기 ↓</strong>를 누르세요. 받은 <code>app.py</code>에 내가 고친 세 줄이 들어 있습니다.</li><li><a href="starter/requirements.txt" download="requirements.txt">requirements.txt 받기 ↓</a>를 누르세요. 파일 안의 <code>streamlit</code> 한 줄은 앱 실행에 필요한 도구의 이름입니다.</li><li>브라우저의 다운로드 목록이나 기기의 다운로드 폴더를 열어 두 파일을 찾으세요. 여러 번 받아 <code>app (1).py</code>처럼 숫자가 붙었다면 내가 고친 파일의 이름을 <code>app.py</code>로 정리하세요.</li></ol>
+    <p class="setup-check"><b>올릴 파일</b> <code>app.py</code>와 <code>requirements.txt</code>, 두 개입니다. 작업대 탭을 닫았다면 <a href="workshop/?unit=1" target="_blank" rel="noopener">코드 작업대 ↗</a>를 다시 열어 문구부터 고치세요.</p>
+  </div>
+</details>
+<details id="first-repo">
+  <summary>6. 내 GitHub에 저장소를 하나 만드세요</summary>
+  <div class="setup-body">
+    <p>저장소(Repository)는 한 앱에 쓸 파일을 모아 두는 곳입니다.</p>
+    <ol><li><a href="https://github.com/new" target="_blank" rel="noopener">새 저장소 만들기 ↗</a>에서 <b>Owner</b>가 내 사용자 이름인지 확인하세요. <b>Repository name</b>에 <code>lunch-app</code>을 적습니다.</li><li>공개 범위는 <strong>Public</strong>을 고르고, <b>Add README</b>는 꺼 둔 뒤 <strong>Create repository</strong>를 누르세요.</li></ol>
+    <p class="setup-check"><b>확인</b> 화면 위에 <code>내 사용자 이름 / lunch-app</code>이 보입니다. 이미 같은 이름의 수업용 저장소가 있다면 그 저장소의 <b>Code</b> 화면에서 7번을 시작하세요.</p>
+  </div>
+</details>
+<details id="first-upload">
+  <summary>7. 두 파일을 올리고 변경 사항을 저장하세요</summary>
+  <div class="setup-body">
+    <ol><li>빈 저장소 안내에서 <strong>uploading an existing file</strong>을 누르세요. 파일 목록이 이미 보인다면 위쪽 <strong>Add file</strong>에서 <strong>Upload files</strong>를 고르세요.</li><li>파일 두 개를 업로드 칸에 끌어 놓거나 <strong>choose your files</strong>를 눌러 고르세요. 두 이름이 보이면 아래에 <b>첫 급식 앱</b>이라고 변경 내용을 적고 <strong>Commit changes</strong>를 누르세요. 저장할 곳을 고르는 창이 나오면 현재 브랜치에 저장하세요.</li></ol>
+    <p class="setup-check"><b>확인</b> <b>Code</b> 화면 첫 목록에 <code>app.py</code>와 <code>requirements.txt</code>가 나란히 보여야 합니다. 목록 위 브랜치 이름도 보세요. 보통 <code>main</code>입니다.</p>
+  </div>
+</details>
+<details id="first-deploy">
+  <summary>8. 실행할 저장소와 파일을 골라 공개하세요</summary>
+  <div class="setup-body">
+    <ol><li><a href="https://share.streamlit.io/" target="_blank" rel="noopener">Streamlit 작업 공간 ↗</a>에서 오른쪽 위 <strong>Create app</strong>을 누르세요. 이미 만든 앱이 있는지 물으면 <strong>Yup, I have an app</strong>을 고르세요.</li><li>아래 세 칸을 채우세요. 예시의 ‘내 사용자 이름’ 자리에는 2번에서 확인한 이름을 씁니다.</li></ol>
+    <dl class="setup-fields"><div><dt>Repository</dt><dd><code>내 사용자 이름/lunch-app</code></dd></div><div><dt>Branch</dt><dd><code>main</code> 또는 7번에서 확인한 브랜치 이름</dd></div><div><dt>Main file path</dt><dd><code>app.py</code></dd></div></dl>
+    <p>세 칸을 확인한 뒤 <strong>Deploy</strong>를 누르세요. 앱을 준비하는 동안 잠깐 기다립니다.</p>
+    <p class="setup-check"><b>공개 완료</b> 주소 끝이 <code>.streamlit.app</code>인 화면에 내 제목과 내가 고친 문구가 보입니다.</p>
+    <p class="setup-help">저장소가 목록에 없으면 소유자와 저장소 이름을 직접 입력하세요. 그래도 찾지 못하면 4번의 사용자 이름과 7번의 <b>Public</b> 표시를 다시 보세요. 파일을 찾지 못했다면 GitHub 첫 목록의 대소문자와 파일 경로를 확인하세요.</p>
+  </div>
+</details>
+<details id="first-share">
+  <summary>9. 짝의 기기에서 열고, 문장을 한 번 더 고쳐 보세요</summary>
+  <div class="setup-body">
+    <ol><li>앱 제목이 보이는 브라우저 주소창에서 <code>.streamlit.app</code> 주소를 복사해 짝에게 보내세요. 짝에게 제목 아래 한 줄을 읽어 달라고 하세요.</li><li>내 GitHub 저장소에서 <code>app.py</code>를 열고 연필 모양 <b>Edit</b>를 누르세요. 셋째 줄의 따옴표 안 문장을 하나 바꾸고 <b>Commit changes</b>로 같은 브랜치에 저장하세요.</li><li>잠시 뒤 짝에게 같은 앱 주소를 새로고침해 달라고 하세요. 짝이 새 문장을 읽으면 오늘 실습은 끝입니다.</li></ol>
+    <p class="setup-help">짝의 화면에 파일 목록이 보이면 GitHub 주소를 보낸 겁니다. Streamlit 작업 공간에서 내 앱을 열고, 제목이 보이는 탭의 주소를 다시 보내세요.</p>
+  </div>
+</details>
+</div>
+</section></main><footer><div><strong>두근두근 급식실</strong><a href="https://greatsong.github.io/ds-danggok-2026/lesson01.html">당곡 DS 1차시 ↗</a></div></footer>
+<script>
+function openGuideStep() {
+  const step = document.getElementById(location.hash.slice(1));
+  if (step && step.matches(".setup-list details")) step.open = true;
+}
+document.querySelector(".setup-jump").addEventListener("click", event => {
+  const link = event.target.closest("a");
+  if (link) document.querySelector(link.hash).open = true;
+});
+window.addEventListener("hashchange", openGuideStep);
+openGuideStep();
+</script></body></html>

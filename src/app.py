@@ -75,6 +75,7 @@ def home():
 
 def first():
     st.title("파이썬 세 줄로 만드는 첫 화면")
+    st.write("아래 두 칸에 쓴 말이 앱에 어떻게 보이는지 확인하세요. 둘째 칸의 문장을 바꾸고 Enter를 눌러 보세요.")
     with st.container(border=True):
         left, right = st.columns(2)
         title = left.text_input("앱 제목", "두근두근 급식실", max_chars=80)
@@ -85,12 +86,14 @@ def first():
     with b.container(border=True):
         st.caption("실행 화면")
         st.title(title); st.write(intro)
-    st.subheader("내 주소로 공개하기")
-    a,b = st.columns(2)
-    download(a, "① app.py 받기", code, "app.py", "text/plain")
-    download(b, "② requirements.txt 받기", "streamlit\n", "requirements.txt", "text/plain")
-    st.write("GitHub에서 새 공개 저장소를 만들고 두 파일을 올리세요. Streamlit Community Cloud에서 저장소를 고르고 실행 파일에 app.py를 적으면 내 앱 주소가 생깁니다.")
-    st.link_button("가입과 배포 순서 보기", "https://greatsong.github.io/dugeun-lunch-lab/#signup")
+    st.subheader("내 문장으로 앱 공개하기")
+    st.write("코드 작업대에서는 셋째 줄을 직접 고쳐 실행할 수 있어요. 그 파일을 GitHub에 올리고 Streamlit Community Cloud에서 열면 짝에게 보낼 앱 주소가 생깁니다.")
+    st.link_button("1차시 예제부터 가입·공개까지", "https://greatsong.github.io/dugeun-lunch-lab/#signup")
+    with st.expander("이 화면에서 만든 두 파일 받기"):
+        st.write("지금 보이는 제목과 문구를 쓰려면 아래 두 파일을 받으세요. 코드 작업대에서 고친 문구를 쓰려면 작업대의 ‘코드 받기 ↓’를 누르세요.")
+        a, b = st.columns(2)
+        download(a, "① app.py 받기", code, "app.py", "text/plain")
+        download(b, "② requirements.txt 받기", "streamlit\n", "requirements.txt", "text/plain")
     prompts(1)
 
 
