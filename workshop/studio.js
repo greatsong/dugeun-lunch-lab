@@ -21,7 +21,7 @@ async function load(id){
   const source=await response.text();
   const companions = {};
   if (entry.id==="2"){
-    for(const file of ["meals.py","중식19일.csv"]){
+    for(const file of ["meals.py","학교목록.csv","중식19일.csv"]){
       const asset=await fetch("../src/"+file);
       if(!asset.ok) throw new Error("급식 조회 예제의 파일을 읽지 못했어요.");
       companions[file]=await asset.text();

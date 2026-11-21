@@ -23,19 +23,22 @@ def dish(container, name):
 
 def meal_screen(manage=False):
     st.header("우리 학교 점심 메뉴")
+    selection = meals.choose_school()
+    if st.session_state.get("meal_school") != selection:
+        st.session_state.meal_school = selection
+        st.session_state.pop("dataset", None)
     with st.form("query"):
         left, right = st.columns(2)
-        office = left.text_input("교육청 코드", "B10").strip().upper()
-        school = right.text_input("학교 코드", "7010073").strip()
         start = left.date_input("시작일", dt.date.today())
         end = right.date_input("종료일", dt.date.today())
         key = st.text_input("나이스 인증키 (있을 때만)", type="password")
-        live = st.form_submit_button("나이스 중식 조회")
-    if live:
+        live = st.form_submit_button("나이스 중식 조회", disabled=selection is None)
+    if live and selection:
+        label, office, school = selection
         try:
             with st.spinner("중식 식단을 불러오고 있어요."):
                 rows = meals.fetch(office, school, start, end, (key.strip() or os.environ.get("NEIS_API_KEY", "")))
-            st.session_state.dataset = (rows, f"{office} · 학교 {school} · {start} ~ {end}")
+            st.session_state.dataset = (rows, f"{label} · {start} ~ {end}")
             if not rows:
                 st.info("이 기간에는 중식 기록이 없어요.")
         except (ValueError, OSError) as exc:
@@ -44,6 +47,8 @@ def meal_screen(manage=False):
     if st.button("저장된 중식 19일 열기"):
         st.session_state.dataset = (meals.saved(), "당곡고등학교 · 2025년 9월 중식 저장본")
     if "dataset" not in st.session_state:
+        if selection is not None:
+            return
         st.session_state.dataset = (meals.saved(), "당곡고등학교 · 2025년 9월 중식 저장본")
     rows, source = st.session_state.dataset
     if not rows:

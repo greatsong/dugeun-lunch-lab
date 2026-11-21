@@ -4,6 +4,7 @@ import json
 import sys
 import re
 from collections import Counter
+from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
@@ -69,3 +70,26 @@ def fetch(office, school, start, end, key=""):
 
 def frequencies(rows):
     return Counter(menu for day, menus in rows for menu in dict.fromkeys(menus))
+
+
+@lru_cache(maxsize=1)
+def load_schools():
+    path = Path(__file__).with_name("학교목록.csv")
+    with path.open(encoding="utf-8", newline="") as file:
+        return {
+            f"{row['학교명']} · {row['지역']}": (row["교육청코드"], row["학교코드"])
+            for row in csv.DictReader(file)
+        }
+
+
+def choose_school():
+    import streamlit as st
+
+    schools = load_schools()
+    label = st.selectbox("학교 이름", schools.keys(), index=None,
+                         placeholder="학교 이름을 입력하세요", help="이름이 같으면 지역을 확인하세요.")
+    if label is None:
+        return None
+    office, code = schools[label]
+    st.caption(f"교육청 코드 {office} · 학교 코드 {code}")
+    return label, office, code

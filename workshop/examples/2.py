@@ -1,6 +1,6 @@
 from datetime import date
 import streamlit as st
-from meals import one_day, saved
+from meals import choose_school, one_day, saved
 
 st.title("그날 점심은 뭐였지?")
 day = st.date_input("날짜", date(2025, 9, 1))
@@ -9,10 +9,12 @@ if source == "수업용 저장본":
     menus = dict(saved()).get(day.isoformat(), [])
     st.caption("당곡고 · 2025년 9월 중식 19일")
 else:
-    if not st.button("이 날짜 조회"):
+    selection = choose_school()
+    if not st.button("이 날짜 조회", disabled=selection is None):
         st.stop()
     try:
-        menus = one_day("B10", "7010073", day)
+        _, office, school = selection
+        menus = one_day(office, school, day)
     except (ValueError, OSError):
         st.warning("조회에 실패했어요. 저장본으로 바꾸거나 다시 시도하세요.")
         st.stop()

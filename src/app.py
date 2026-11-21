@@ -100,7 +100,7 @@ def first():
 def meals_page():
     meal_screen()
     with st.expander("내 저장소에 급식 조회 앱 올리기"):
-        st.write("압축을 풀고 네 파일을 GitHub 저장소에 올리세요. Streamlit에서 실행 파일을 급식조회.py로 지정하세요.")
+        st.write("압축을 풀고 안에 든 파일을 GitHub 저장소에 올리세요. Streamlit에서 실행 파일을 급식조회.py로 지정하세요.")
         download(st, "급식 조회 시작 파일 받기", starter_zip(), "급식조회_시작파일.zip", "application/zip")
 
     prompts(2)
@@ -110,7 +110,7 @@ def meals_page():
 def starter_zip():
     data=io.BytesIO()
     with zipfile.ZipFile(data,"w",zipfile.ZIP_DEFLATED) as z:
-        for name in ("급식조회.py","meals.py","중식19일.csv","requirements.txt"):
+        for name in ("급식조회.py","meals.py","학교목록.csv","중식19일.csv","requirements.txt"):
             z.write(ROOT/name,name)
     return data.getvalue()
 
