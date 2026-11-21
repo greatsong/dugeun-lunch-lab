@@ -1,0 +1,5 @@
+.*
+!.nojekyll
+!.gitignore
+__pycache__/
+*.sqlite*
